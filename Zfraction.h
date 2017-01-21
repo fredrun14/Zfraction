@@ -57,4 +57,8 @@
       bool operator!=(Zfraction const& a, Zfraction const& b);
       bool operator> (Zfraction const& a, Zfraction const& b);
 
+      /*  ====================  FUNCTIONS     ======================================= */
+      int pgcdEuclide (int a, int b); 
+      int pgcd(int a, int b);
+
 #endif

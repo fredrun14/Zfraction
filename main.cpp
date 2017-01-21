@@ -26,5 +26,12 @@ int main()
   else
     cout << "a is smaller than b." << endl;
 
+
+   // calcul des pgcd
+   cout << "pgcd of 216 and 126 by soustraction : " << pgcd(216,126) << endl;
+   cout << "pgcd of 216 and 126 by euclide      : " << pgcdEuclide(216,126) << endl;
+   // calcul du ppcm  
+   //cout << "ppcm of 216 and 126                  : " << ppcm(216,126) << endl;
+   //
    return 0;
 } 

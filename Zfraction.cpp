@@ -124,4 +124,36 @@ Zfraction operator* (Zfraction const& a, Zfraction const& b)
   return resultat;
 }
 
+/*
+ *  *--------------------------------------------------------------------------------------
+ *   * Description:  PGCD and Algorithm of successive subtractions
+ *    *--------------------------------------------------------------------------------------
+ *     */
+int pgcd (int a,int b)
+{
+  while (a!=b)
+  {
+    if (a>b)
+      a-=b;
+    else
+      b-=a; 
+  }
+  return a;
+}
+
+
+/*
+ *  *--------------------------------------------------------------------------------------
+ *   * Description:  PGCD and Algorithm of euclide   
+ *    *--------------------------------------------------------------------------------------
+ *     */
+int pgcdEuclide (int a, int b)
+{
+  if (b==0)
+    return a;
+  else
+    return pgcdEuclide (b, a%b);
+}
+
+
 
