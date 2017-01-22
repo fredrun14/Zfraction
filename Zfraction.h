@@ -40,6 +40,8 @@
       void setNumerator(int numerator);
       void setDenominator(int denominator);
       /* ====================  MUTATORS      ======================================= */
+      void simplify(); 
+
 
       void display(std::ostream &flux) const;
     private:
@@ -57,8 +59,8 @@
       bool operator!=(Zfraction const& a, Zfraction const& b);
       bool operator> (Zfraction const& a, Zfraction const& b);
 
-      /*  ====================  FUNCTIONS     ======================================= */
-      int pgcdEuclide (int a, int b); 
+      /* ====================  FUNCTIONS     ======================================= */
+      int pgcdEuclide (int a, int b);
       int pgcd(int a, int b);
-
+      int ppcm(int a, int b);
 #endif

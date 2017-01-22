@@ -68,7 +68,13 @@ void Zfraction::display (ostream &flux) const
     flux << m_numerator << "/" << m_denominator << endl;
 }
 
-
+/* simplification à l'aide du pgcd */
+void Zfraction::simplify()
+{
+  int i_pgcd = pgcd (m_numerator,m_denominator);
+  m_numerator = m_numerator / i_pgcd;
+  m_denominator = m_denominator / i_pgcd; 
+}
 /* ############################### the operators     ############################### */
 ostream &operator<< (ostream &flux, Zfraction const& z)
 {
@@ -124,11 +130,12 @@ Zfraction operator* (Zfraction const& a, Zfraction const& b)
   return resultat;
 }
 
+
 /*
- *  *--------------------------------------------------------------------------------------
- *   * Description:  PGCD and Algorithm of successive subtractions
- *    *--------------------------------------------------------------------------------------
- *     */
+ *--------------------------------------------------------------------------------------
+ * Description:  PGCD and Algorithm of successive subtractions
+ *--------------------------------------------------------------------------------------
+ */
 int pgcd (int a,int b)
 {
   while (a!=b)
@@ -143,10 +150,10 @@ int pgcd (int a,int b)
 
 
 /*
- *  *--------------------------------------------------------------------------------------
- *   * Description:  PGCD and Algorithm of euclide   
- *    *--------------------------------------------------------------------------------------
- *     */
+ *--------------------------------------------------------------------------------------
+ * Description:  PGCD and Algorithm of euclide   
+ *--------------------------------------------------------------------------------------
+ */
 int pgcdEuclide (int a, int b)
 {
   if (b==0)
@@ -156,4 +163,12 @@ int pgcdEuclide (int a, int b)
 }
 
 
-
+/*
+ *--------------------------------------------------------------------------------------
+ * Description:  PPCM starting from pgcd
+ *--------------------------------------------------------------------------------------
+ */
+int ppcm (int a,int b)
+{
+  return (a*b) / pgcd(a,b);
+}
